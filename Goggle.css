@@ -1,0 +1,100 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box {
+    background: white;
+    padding: 20px; /* Reduced from 40px */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 300px; /* Shrunk from 400px to fit mobile */
+    max-width: 100%; /* Ensures it doesn’t overflow on small screens */
+    text-align: center;
+}
+
+.logo {
+    width: 75px; /* Slightly smaller than 92px */
+    margin-bottom: 15px; /* Reduced from 20px */
+}
+
+h1 {
+    font-size: 20px; /* Down from 24px */
+    font-weight: 400;
+    margin: 8px 0; /* Tightened from 10px */
+}
+
+p {
+    font-size: 14px; /* Down from 16px */
+    color: #5f6368;
+    margin: 0 0 15px 0; /* Reduced from 20px */
+}
+
+.input-group {
+    margin-bottom: 15px; /* Down from 20px */
+}
+
+input {
+    width: 100%;
+    padding: 10px; /* Slightly less than 12px */
+    font-size: 14px; /* Down from 16px */
+    border: 1px solid #dadce0;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input:focus {
+    outline: none;
+    border-color: #1a73e8;
+    box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.2);
+}
+
+.forgot-link {
+    display: block;
+    text-align: left;
+    font-size: 12px; /* Down from 14px */
+    color: #1a73e8;
+    text-decoration: none;
+    margin-bottom: 15px; /* Reduced from 20px */
+}
+
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.next-btn {
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    padding: 8px 20px; /* Slightly smaller than 10px 24px */
+    font-size: 13px; /* Down from 14px */
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.next-btn:hover {
+    background-color: #1557b0;
+}
+
+.footer-links {
+    margin-top: 15px; /* Down from 20px */
+    font-size: 12px; /* Down from 14px */
+}
+
+.footer-links a {
+    color: #1a73e8;
+    text-decoration: none;
+    margin: 0 8px; /* Slightly less than 10px */
+}
